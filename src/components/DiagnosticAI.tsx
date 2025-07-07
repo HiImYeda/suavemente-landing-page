@@ -1,7 +1,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Target, BarChart, ShieldCheck } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BrainCircuit } from "lucide-react";
 
 const DiagnosticAI = () => {
   const scrollToContact = () => {
@@ -12,80 +13,107 @@ const DiagnosticAI = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Uma Inovação Científica na Saúde Mental Ocupacional
+    <section className="py-24 bg-slate-950 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-200 to-blue-400 bg-clip-text text-transparent mb-6">
+            Pioneirismo, Precisão e Psicanálise
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Apresentamos nosso Diagnóstico de Burnout com Inteligência Artificial, uma ferramenta precisa e estratégica para empresas que se preocupam com seus colaboradores.
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Nossa metodologia proprietária de IA não apenas identifica o risco de burnout. Ela revela os padrões inconscientes e os mecanismos de defesa que moldam sua vida profissional.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="backdrop-blur-sm bg-white/80 shadow-2xl border-0 hover:shadow-3xl transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl text-gray-800">A Metodologia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 leading-relaxed">
-                Nosso sistema pioneiro integra a <strong>psicanálise freudiana com inteligência artificial</strong> para ir além dos sintomas e entender as causas do estresse no ambiente de trabalho. Através de um questionário estruturado, nosso sistema realiza uma análise quantitativa e qualitativa, mapeando mecanismos de defesa e padrões de comportamento para entregar um relatório estratégico com classificação de risco e recomendações preventivas.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="backdrop-blur-sm bg-white/80 shadow-2xl border-0 hover:shadow-3xl transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl text-gray-800">Benefícios para sua Empresa</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-800">Diagnóstico Precoce:</strong>
-                    <span className="text-gray-600"> Identifique riscos antes que o esgotamento se instale.</span>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left column - Interactive visualization */}
+          <div className="flex justify-center">
+            <div className="relative">
+              <div className="w-80 h-80 relative">
+                {/* Central brain icon */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/25">
+                    <BrainCircuit className="h-16 w-16 text-white" />
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3">
-                  <Target className="h-6 w-6 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-800">Intervenções Personalizadas:</strong>
-                    <span className="text-gray-600"> Crie ações de bem-estar direcionadas e eficientes.</span>
-                  </div>
-                </div>
+                {/* Animated connection nodes */}
+                <div className="absolute top-0 left-1/2 w-4 h-4 bg-cyan-400 rounded-full animate-pulse transform -translate-x-1/2"></div>
+                <div className="absolute top-1/4 right-0 w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-500"></div>
+                <div className="absolute bottom-1/4 right-0 w-3 h-3 bg-indigo-400 rounded-full animate-pulse delay-1000"></div>
+                <div className="absolute bottom-0 left-1/2 w-4 h-4 bg-purple-400 rounded-full animate-pulse delay-150 transform -translate-x-1/2"></div>
+                <div className="absolute bottom-1/4 left-0 w-3 h-3 bg-violet-400 rounded-full animate-pulse delay-700"></div>
+                <div className="absolute top-1/4 left-0 w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-300"></div>
                 
-                <div className="flex items-start space-x-3">
-                  <BarChart className="h-6 w-6 text-purple-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-800">Prevenção Sistêmica:</strong>
-                    <span className="text-gray-600"> Identifique e corrija padrões organizacionais que geram desgaste.</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <ShieldCheck className="h-6 w-6 text-indigo-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-800">Redução do Estigma:</strong>
-                    <span className="text-gray-600"> Ofereça uma análise técnica, sigilosa e sem julgamentos.</span>
-                  </div>
-                </div>
+                {/* Connection lines */}
+                <svg className="absolute inset-0 w-full h-full">
+                  <line x1="50%" y1="12%" x2="50%" y2="40%" stroke="#06b6d4" strokeWidth="1" opacity="0.6" className="animate-pulse"/>
+                  <line x1="88%" y1="25%" x2="65%" y2="45%" stroke="#3b82f6" strokeWidth="1" opacity="0.6" className="animate-pulse delay-500"/>
+                  <line x1="88%" y1="75%" x2="65%" y2="55%" stroke="#6366f1" strokeWidth="1" opacity="0.6" className="animate-pulse delay-1000"/>
+                  <line x1="50%" y1="88%" x2="50%" y2="60%" stroke="#8b5cf6" strokeWidth="1" opacity="0.6" className="animate-pulse delay-150"/>
+                  <line x1="12%" y1="75%" x2="35%" y2="55%" stroke="#a855f7" strokeWidth="1" opacity="0.6" className="animate-pulse delay-700"/>
+                  <line x1="12%" y1="25%" x2="35%" y2="45%" stroke="#06b6d4" strokeWidth="1" opacity="0.6" className="animate-pulse delay-300"/>
+                </svg>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+          </div>
 
-        <div className="text-center mt-12">
-          <Button 
-            onClick={scrollToContact}
-            variant="outline" 
-            size="lg"
-            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300"
-          >
-            Solicitar uma apresentação para sua empresa
-          </Button>
+          {/* Right column - Accordion */}
+          <div>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
+                <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
+                  Diagnóstico Precoce e Profundo
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
+                  Nossa IA não apenas detecta sinais de burnout, mas mapeia os padrões inconscientes que levam ao esgotamento antes mesmo dos primeiros sintomas aparecerem.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
+                <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
+                  Intervenções Personalizadas
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
+                  Cada diagnóstico gera um plano de ação único, baseado nos mecanismos de defesa específicos identificados pela análise psicanalítica integrada.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
+                <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
+                  Prevenção Sistêmica para Empresas
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
+                  Identificamos padrões organizacionais tóxicos e fornecemos estratégias estruturais para transformar o ambiente de trabalho em um espaço de crescimento.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
+                <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
+                  Sigilo Absoluto. Sem Julgamentos.
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
+                  Nossa análise técnica mantém total confidencialidade, oferecendo insights profundos sem exposição pessoal ou julgamentos corporativos.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <div className="mt-8">
+              <Button 
+                onClick={scrollToContact}
+                variant="outline" 
+                size="lg"
+                className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300 bg-transparent"
+              >
+                Conheça a metodologia para empresas
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
