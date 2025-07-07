@@ -1,21 +1,21 @@
 
 import Hero from "@/components/Hero";
-import TherapySection from "@/components/TherapySection";
-import DiagnosticAI from "@/components/DiagnosticAI";
-import VideoSection from "@/components/VideoSection";
-import FounderSection from "@/components/FounderSection";
-import ContactSection from "@/components/ContactSection";
+import ScrollytellingSection from "@/components/ScrollytellingSection";
+import InteractiveQuiz from "@/components/InteractiveQuiz";
+import CorporateDashboard from "@/components/CorporateDashboard";
+import LeadMagnet from "@/components/LeadMagnet";
+import ContactFAQ from "@/components/ContactFAQ";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      <TherapySection />
-      <DiagnosticAI />
-      <VideoSection />
-      <FounderSection />
-      <ContactSection />
+      <ScrollytellingSection />
+      <InteractiveQuiz />
+      <CorporateDashboard />
+      <LeadMagnet />
+      <ContactFAQ />
       <Footer />
     </main>
   );
