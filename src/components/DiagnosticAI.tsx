@@ -1,7 +1,6 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { BrainCircuit } from "lucide-react";
 
 const DiagnosticAI = () => {
@@ -22,11 +21,11 @@ const DiagnosticAI = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-200 to-blue-400 bg-clip-text text-transparent mb-6">
-            Pioneirismo, Precisão e Psicanálise
+          <h2 className="text-5xl font-bold text-slate-100 mb-6">
+            Inovação a serviço do cuidado humano.
           </h2>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Nossa metodologia proprietária de IA não apenas identifica o risco de burnout. Ela revela os padrões inconscientes e os mecanismos de defesa que moldam sua vida profissional.
+            Apresentamos nossa ferramenta de diagnóstico precoce de burnout. Utilizando a precisão da Inteligência Artificial, oferecemos às empresas uma forma confidencial e eficaz de proteger seu bem mais valioso: as pessoas.
           </p>
         </div>
 
@@ -68,37 +67,28 @@ const DiagnosticAI = () => {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
                 <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
-                  Diagnóstico Precoce e Profundo
+                  O que é?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
-                  Nossa IA não apenas detecta sinais de burnout, mas mapeia os padrões inconscientes que levam ao esgotamento antes mesmo dos primeiros sintomas aparecerem.
+                  Uma plataforma que, através de um questionário validado, identifica os níveis de risco de burnout na sua equipe, permitindo ações preventivas antes que o esgotamento se instale.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-2" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
                 <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
-                  Intervenções Personalizadas
+                  Benefícios para a Empresa
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
-                  Cada diagnóstico gera um plano de ação único, baseado nos mecanismos de defesa específicos identificados pela análise psicanalítica integrada.
+                  Redução de turnover e absenteísmo, aumento da produtividade e engajamento, e fortalecimento de uma cultura organizacional que valoriza a saúde mental.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-3" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
                 <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
-                  Prevenção Sistêmica para Empresas
+                  Benefícios para o Colaborador
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
-                  Identificamos padrões organizacionais tóxicos e fornecemos estratégias estruturais para transformar o ambiente de trabalho em um espaço de crescimento.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4" className="border border-slate-800 rounded-lg bg-slate-900/50 backdrop-blur-sm">
-                <AccordionTrigger className="text-slate-200 hover:text-blue-400 px-6 py-4 text-lg font-semibold">
-                  Sigilo Absoluto. Sem Julgamentos.
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-300 px-6 pb-4 leading-relaxed">
-                  Nossa análise técnica mantém total confidencialidade, oferecendo insights profundos sem exposição pessoal ou julgamentos corporativos.
+                  Um processo 100% confidencial que oferece autoconhecimento, identifica fontes de estresse e abre caminhos para o cuidado, sem qualquer tipo de exposição.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -110,7 +100,7 @@ const DiagnosticAI = () => {
                 size="lg"
                 className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300 bg-transparent"
               >
-                Conheça a metodologia para empresas
+                Saiba mais sobre a parceria para empresas
               </Button>
             </div>
           </div>

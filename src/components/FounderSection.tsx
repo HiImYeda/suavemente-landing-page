@@ -10,8 +10,8 @@ const FounderSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-200 to-blue-400 bg-clip-text text-transparent mb-8">
-            A Visão por Trás da Inovação
+          <h2 className="text-5xl font-bold text-slate-100 mb-8">
+            A Visão que nos Guia
           </h2>
         </div>
 
@@ -37,7 +37,7 @@ const FounderSection = () => {
             <blockquote className="relative">
               <div className="absolute -top-4 -left-4 text-6xl text-blue-500/30 font-serif">"</div>
               <p className="text-2xl md:text-3xl font-light text-slate-200 italic leading-relaxed pl-8 pr-4">
-                Percebi que o futuro da saúde mental não estava em escolher entre tecnologia e humanidade, mas em uni-las de forma inseparável.
+                A verdadeira inovação no cuidado não é substituir o humano, mas sim potencializá-lo. É usar as ferramentas de hoje para aprofundar a escuta e o acolhimento que a psicanálise sempre ofereceu.
               </p>
               <div className="absolute -bottom-4 -right-4 text-6xl text-blue-500/30 font-serif rotate-180">"</div>
             </blockquote>
@@ -45,20 +45,8 @@ const FounderSection = () => {
             {/* Description */}
             <div className="pl-8 border-l-2 border-blue-500/30">
               <p className="text-lg text-slate-300 leading-relaxed">
-                Com mais de 30 anos de experiência, <span className="text-blue-400 font-semibold">Roberto Lucena</span> fundou o Instituto Suavemente não apenas como uma empresa, mas como uma resposta. Uma resposta à necessidade de um cuidado que fosse ao mesmo tempo profundo, humano e alinhado às complexidades do mundo moderno. Sua visão é o pilar que sustenta cada diagnóstico e cada jornada terapêutica.
+                Como psicanalista e empresário, <span className="text-blue-400 font-semibold">Roberto Lucena</span> fundou o Instituto Suavemente com um propósito claro: criar uma ponte entre a profundidade do cuidado psicanalítico e as necessidades do mundo contemporâneo. Sua visão é a de um cuidado humano, acessível e alinhado aos desafios de hoje, onde a tecnologia serve como uma aliada na promoção da saúde mental.
               </p>
-            </div>
-
-            {/* Stats or highlights */}
-            <div className="grid grid-cols-2 gap-6 pt-8">
-              <div className="text-center p-6 bg-slate-900/50 rounded-xl border border-slate-800">
-                <div className="text-3xl font-bold text-blue-400 mb-2">30+</div>
-                <div className="text-slate-300 text-sm">Anos de Experiência</div>
-              </div>
-              <div className="text-center p-6 bg-slate-900/50 rounded-xl border border-slate-800">
-                <div className="text-3xl font-bold text-purple-400 mb-2">∞</div>
-                <div className="text-slate-300 text-sm">Visão de Futuro</div>
-              </div>
             </div>
           </div>
         </div>
