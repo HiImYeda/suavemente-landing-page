@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
       {/* Organic video background simulation */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black"></div>
@@ -55,7 +55,7 @@ const Hero = () => {
         </svg>
       </div>
       
-      <div className={`relative z-10 max-w-5xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`relative z-10 max-w-5xl mx-auto px-6 text-center transition-all duration-1000 pt-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h1 className="text-6xl md:text-7xl font-light mb-8 text-slate-100 leading-tight">
           É hora de se ouvir.
         </h1>
