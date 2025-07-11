@@ -89,7 +89,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fadeInOut {
           0%, 100% { opacity: 0.05; }
           50% { opacity: 0.15; }
