@@ -23,6 +23,19 @@ const Hero = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black"></div>
         
+        {/* Suavemente Drop with fade effect */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+          <img 
+            src="/lovable-uploads/492a733a-fb1b-46ce-86d1-98dab11cdbae.png" 
+            alt="Suavemente Drop" 
+            className="w-96 h-96 object-contain animate-pulse"
+            style={{
+              filter: 'blur(1px)',
+              animation: 'fadeInOut 8s ease-in-out infinite'
+            }}
+          />
+        </div>
+        
         {/* Floating organic particles */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/40 rounded-full animate-pulse"></div>
@@ -75,6 +88,13 @@ const Hero = () => {
           <ChevronDown className="h-6 w-6 text-slate-400" />
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInOut {
+          0%, 100% { opacity: 0.05; }
+          50% { opacity: 0.15; }
+        }
+      `}</style>
     </section>
   );
 };
