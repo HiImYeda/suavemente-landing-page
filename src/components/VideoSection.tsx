@@ -17,12 +17,12 @@ const VideoSection = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await fetch('https://auto-serv-teste.grupoquaestum.com/webhook/suavemente_landingpage');
+        const response = await fetch('https://automacao-n8n.n4bvdo.easypanel.host/webhook/suavemente_landingpage');
         const data = await response.json();
         console.log('Video data received:', data);
         
-        if (data && data.length > 0 && data[0].videos) {
-          setVideoUrls(data[0].videos);
+        if (data && data.videos) {
+          setVideoUrls(data.videos);
         }
       } catch (error) {
         console.error("Erro ao buscar vídeos:", error);
@@ -60,10 +60,10 @@ const VideoSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-slate-800 mb-6">
-            Sua Jornada em Foco
+            Conversas que Curam e Esclarecem
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Explore insights, entrevistas e conversas profundas que iluminam o caminho do autoconhecimento.
+            Explore trechos de nossas entrevistas, podcasts e conteúdos educacionais. Uma amostra da profundidade e do cuidado que aplicamos em nosso trabalho.
           </p>
         </div>
 

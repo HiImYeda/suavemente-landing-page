@@ -6,6 +6,7 @@ import InnovationSection from "@/components/InnovationSection";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
 import CorporateDashboard from "@/components/CorporateDashboard";
 import LeadMagnet from "@/components/LeadMagnet";
+import VideoSection from "@/components/VideoSection";
 import FounderSection from "@/components/FounderSection";
 import PillarsSection from "@/components/PillarsSection";
 import ContactFAQ from "@/components/ContactFAQ";
@@ -21,6 +22,7 @@ const Index = () => {
       <InteractiveQuiz />
       <CorporateDashboard />
       <LeadMagnet />
+      <VideoSection />
       <FounderSection />
       <PillarsSection />
       <ContactFAQ />
