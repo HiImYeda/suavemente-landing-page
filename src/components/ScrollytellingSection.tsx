@@ -8,19 +8,19 @@ const ScrollytellingSection = () => {
   const acts = [
     {
       title: "O Ruído do Mundo",
-      content: "Vivemos em um mundo que exige muito. A pressão por performance, as incertezas, as relações complexas... Em meio a tanto ruído, a voz mais importante muitas vezes se perde: a sua."
+      content: "Vivemos num mundo que exige uma atitude falsamente positiva. Uma pressão que nos força a silenciar emoções e a evitar o sofrimento. Mas, como disse Mark Manson, \"qualquer tentativa de escapar do negativo... falha\". Em meio a tanto ruído, a sua verdade interior se perde."
     },
     {
       title: "A Pausa para a Escuta",
-      content: "Acreditamos que a transformação começa com a pausa. Com a coragem de olhar para dentro, guiado por uma escuta qualificada, empática e livre de julgamentos. Este é o coração da psicanálise."
+      content: "Acreditamos que a transformação começa ao confrontar a realidade, não ao negá-la. A psicanálise oferece essa pausa: um espaço para a escuta qualificada, empática e livre de julgamentos, onde é seguro não estar bem. Este é o coração do nosso trabalho."
     },
     {
       title: "A Tecnologia como Aliada",
-      content: "Para nós, a inovação não substitui o humano; ela o potencializa. Usamos a tecnologia para tornar o cuidado mais acessível e para oferecer novas ferramentas de autoconhecimento, como nosso diagnóstico de burnout."
+      content: "Para nós, a inovação não substitui o humano; ela o potencializa. Usamos a tecnologia para tornar o cuidado mais acessível e para oferecer novas ferramentas de autoconhecimento, como nosso diagnóstico de burnout, sempre a serviço da profundidade terapêutica."
     },
     {
       title: "O Florescer",
-      content: "Nosso objetivo final é um só: que você se reconecte com sua essência, encontre clareza para seus dilemas e tenha as ferramentas para construir uma vida mais autêntica e significativa. Sua jornada é única. Nós estamos aqui para caminhá-la com você."
+      content: "Nosso objetivo é que você encontre as ferramentas para construir uma vida autêntica, não uma vida de aparências. Que se reconecte com sua essência e encontre clareza para seus dilemas. Sua jornada é única. Nós estamos aqui para caminhá-la com você."
     }
   ];
 

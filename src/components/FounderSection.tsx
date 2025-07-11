@@ -11,7 +11,7 @@ const FounderSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-slate-100 mb-8">
-            A Visão que nos Guia
+            Uma Jornada de Propósito
           </h2>
         </div>
 
@@ -37,7 +37,7 @@ const FounderSection = () => {
             <blockquote className="relative">
               <div className="absolute -top-4 -left-4 text-6xl text-blue-500/30 font-serif">"</div>
               <p className="text-2xl md:text-3xl font-light text-slate-200 italic leading-relaxed pl-8 pr-4">
-                A verdadeira inovação no cuidado não é substituir o humano, mas sim potencializá-lo. É usar as ferramentas de hoje para aprofundar a escuta e o acolhimento que a psicanálise sempre ofereceu.
+                Após 30 anos no mundo corporativo, percebi que a maior necessidade das pessoas não estava na tecnologia que usavam, mas na forma como se sentiam. A psicanálise foi o caminho que encontrei para responder a esse chamado.
               </p>
               <div className="absolute -bottom-4 -right-4 text-6xl text-blue-500/30 font-serif rotate-180">"</div>
             </blockquote>
@@ -45,7 +45,7 @@ const FounderSection = () => {
             {/* Description */}
             <div className="pl-8 border-l-2 border-blue-500/30">
               <p className="text-lg text-slate-300 leading-relaxed">
-                Como psicanalista e empresário, <span className="text-blue-400 font-semibold">Roberto Lucena</span> fundou o Instituto Suavemente com um propósito claro: criar uma ponte entre a profundidade do cuidado psicanalítico e as necessidades do mundo contemporâneo. Sua visão é a de um cuidado humano, acessível e alinhado aos desafios de hoje, onde a tecnologia serve como uma aliada na promoção da saúde mental.
+                A trajetória de <span className="text-blue-400 font-semibold">Roberto Lucena</span> é a união de dois mundos. Com mais de três décadas de experiência como empresário nos setores de Telecomunicações no Brasil e nos EUA, e um longo historial de envolvimento em projetos de relevância social, ele iniciou uma nova jornada. Após 7 anos de formação em Psicanálise Clínica, Pós-graduação e Hipnoterapia, Roberto canalizou a sua experiência de vida e a sua paixão pelo cuidado para idealizar o Instituto Suavemente: um projeto que nasce da vivência real das pressões do ambiente corporativo e do desejo profundo de oferecer suporte emocional autêntico.
               </p>
             </div>
           </div>
