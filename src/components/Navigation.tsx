@@ -2,6 +2,24 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,12 +42,34 @@ const Navigation = () => {
     }
   };
 
-  const navItems = [
-    { label: "Nossa Abordagem", id: "nossa-abordagem" },
-    { label: "Quiz", id: "quiz-interativo" },
-    { label: "Para Empresas", id: "solucoes-corporativas" },
-    { label: "Contato", id: "contato" }
-  ];
+  // Form state
+  const [email, setEmail] = useState("");
+  const [ddi, setDdi] = useState("55");
+  const [whatsNumber, setWhatsNumber] = useState("");
+  const [tipo, setTipo] = useState<string | undefined>(undefined);
+  const [mensagem, setMensagem] = useState("");
+  const { toast } = useToast();
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const sendForm = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await fetch("https://automacao-n8n.n4bvdo.easypanel.host/webhook/entrar_contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, whatsapp: `+${ddi}${whatsNumber}`, tipo, mensagem }),
+      });
+      toast({ title: "Enviado!", description: "Em breve entraremos em contato." });
+      // reset form
+      setEmail("");
+      setWhatsNumber("");
+      setTipo(undefined);
+      setMensagem("");
+      setOpenDialog(false);
+    } catch (err) {
+      toast({ title: "Erro", description: "Não foi possível enviar. Tente novamente." });
+    }
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -52,25 +92,73 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Botão Acessar Portal */}
             <Button
-              onClick={() => scrollToSection('contato')}
+              onClick={() => window.open("https://portalsuavemente.com.br/login", "_blank")}
               size="sm"
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
             >
-              Fale Conosco
+              Acessar Portal
             </Button>
+
+            {/* Dialog Fale Conosco */}
+            <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+              <DialogTrigger asChild>
+                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                  Fale Conosco
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Fale Conosco</DialogTitle>
+                </DialogHeader>
+                <form onSubmit={sendForm} className="space-y-4 mt-4">
+                  <Input
+                    type="email"
+                    placeholder="Seu e-mail"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <div className="flex gap-2">
+                    <Input
+                      type="text"
+                      value={ddi}
+                      onChange={(e) => setDdi(e.target.value)}
+                      className="w-16"
+                    />
+                    <Input
+                      type="text"
+                      placeholder="DDD + Número"
+                      value={whatsNumber}
+                      onChange={(e) => setWhatsNumber(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <Select value={tipo} onValueChange={setTipo as any}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Selecione o tipo de atendimento" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="empresa">Empresa</SelectItem>
+                      <SelectItem value="pessoal">Atendimento Pessoal</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Textarea
+                    placeholder="Como podemos ajudar?"
+                    value={mensagem}
+                    onChange={(e) => setMensagem(e.target.value)}
+                    required
+                  />
+                  <DialogFooter>
+                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                      Enviar
+                    </Button>
+                  </DialogFooter>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,25 +177,70 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t shadow-lg">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <div className="px-3 py-2">
-                <Button
-                  onClick={() => scrollToSection('contato')}
-                  size="sm"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                >
-                  Fale Conosco
-                </Button>
-              </div>
+            <div className="px-4 py-4 space-y-4">
+              <Button
+                onClick={() => window.open("https://portalsuavemente.com.br/login", "_blank")}
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+              >
+                Acessar Portal
+              </Button>
+
+              <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+                <DialogTrigger asChild>
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    Fale Conosco
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Fale Conosco</DialogTitle>
+                  </DialogHeader>
+                  <form onSubmit={sendForm} className="space-y-4 mt-4">
+                    <Input
+                      type="email"
+                      placeholder="Seu e-mail"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                    <div className="flex gap-2">
+                      <Input
+                        type="text"
+                        value={ddi}
+                        onChange={(e) => setDdi(e.target.value)}
+                        className="w-16"
+                      />
+                      <Input
+                        type="text"
+                        placeholder="DDD + Número"
+                        value={whatsNumber}
+                        onChange={(e) => setWhatsNumber(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <Select value={tipo} onValueChange={setTipo as any}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Selecione o tipo de atendimento" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="empresa">Empresa</SelectItem>
+                        <SelectItem value="pessoal">Atendimento Pessoal</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <Textarea
+                      placeholder="Como podemos ajudar?"
+                      value={mensagem}
+                      onChange={(e) => setMensagem(e.target.value)}
+                      required
+                    />
+                    <DialogFooter>
+                      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        Enviar
+                      </Button>
+                    </DialogFooter>
+                  </form>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         )}
