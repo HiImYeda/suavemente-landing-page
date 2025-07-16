@@ -25,14 +25,9 @@ const VideoSection = () => {
         const response = await fetch('https://automacao-n8n.n4bvdo.easypanel.host/webhook/suavemente_landingpage');
         const data = await response.json();
         console.log('Video data received:', data);
-
-        // O webhook pode retornar diretamente um array de URLs ou um objeto { videos: [...] }
-        if (Array.isArray(data)) {
-          setVideoUrls(data);
-        } else if (data && Array.isArray(data.videos)) {
+        
+        if (data && data.videos) {
           setVideoUrls(data.videos);
-        } else {
-          console.warn("Formato de dados inesperado recebido do webhook", data);
         }
       } catch (error) {
         console.error("Erro ao buscar vídeos:", error);
@@ -81,10 +76,6 @@ const VideoSection = () => {
     setIsDragging(true);
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     setStartX(clientX);
-    // Desabilita eventos do iframe enquanto o usuário está arrastando
-    document.querySelectorAll<HTMLIFrameElement>(".video-slide iframe").forEach((iframe) => {
-      iframe.style.pointerEvents = "none";
-    });
     if (carouselRef.current) {
       carouselRef.current.style.cursor = 'grabbing';
     }
@@ -110,10 +101,6 @@ const VideoSection = () => {
     }
     
     setDraggedX(0);
-    // Reabilita eventos apenas no slide ativo
-    document.querySelectorAll<HTMLIFrameElement>(".video-slide iframe").forEach((iframe) => {
-      iframe.style.pointerEvents = iframe.closest('.video-slide')?.classList.contains('active') ? 'auto' : 'none';
-    });
     if (carouselRef.current) {
       carouselRef.current.style.cursor = 'grab';
     }
@@ -268,33 +255,19 @@ const VideoSection = () => {
             height: 200px;
           }
           
-          .nav-button {
-            width: 40px;
-            height: 40px;
-            top: 40%;
-          }
-
           .nav-button.prev {
-            left: 5px;
+            left: 5%;
           }
-
+          
           .nav-button.next {
-            right: 5px;
-          }
-
-          .carousel-track {
-            height: 300px;
-          }
-
-          .carousel-dots {
-            margin-top: 0.5rem;
+            right: 5%;
           }
         }
       `}</style>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-5xl font-light text-slate-800 mb-6">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-slate-800 mb-6">
             Conversas que Curam e Esclarecem
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -374,11 +347,11 @@ const VideoSection = () => {
           </div>
         )}
 
-        <div className="text-center mt-6 md:mt-12">
+        <div className="text-center mt-12">
           <Button 
-            onClick={() => window.open('https://www.youtube.com/@institutosuavemente6253', '_blank')}
+            onClick={() => window.open('https://youtube.com/@institutosuavemente', '_blank')}
             size="lg"
-            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-4 md:px-8 md:py-6 text-base md:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-6 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             Inscreva-se em nosso canal do YouTube
             <ExternalLink className="ml-2 h-5 w-5" />

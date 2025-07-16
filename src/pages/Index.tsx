@@ -17,7 +17,6 @@ const Index = () => {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      {/* Comentando todas as outras seções para exibir apenas o cabeçalho e a barra de navegação
       <ScrollytellingSection />
       <InnovationSection />
       <InteractiveQuiz />
@@ -28,7 +27,6 @@ const Index = () => {
       <PillarsSection />
       <ContactFAQ />
       <Footer />
-      */}
     </main>
   );
 };

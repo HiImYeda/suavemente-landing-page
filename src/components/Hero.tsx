@@ -75,26 +75,18 @@ const Hero = () => {
         <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
           Um espaço de acolhimento e escuta profunda para você compreender suas questões, ressignificar suas histórias e florescer.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            onClick={() => window.open('https://www.institutosuavemente.com.br/', '_blank')}
-            size="lg" 
-            className="bg-gradient-to-r from-blue-600 via-cyan-600 to-indigo-600 hover:from-blue-700 hover:via-cyan-700 hover:to-indigo-700 text-white px-10 py-6 text-lg rounded-full shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 border border-cyan-500/20"
-          >
-            Conheça o Instituto
-          </Button>
-          
-          <Button 
-            onClick={() => window.open('https://portalsuavemente.com.br/login', '_blank')}
-            size="lg" 
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-10 py-6 text-lg rounded-full shadow-2xl hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-105 border border-pink-500/20"
-          >
-            Acessar o Portal
-          </Button>
-        </div>
+        <Button 
+          onClick={scrollToNext}
+          size="lg" 
+          className="bg-gradient-to-r from-blue-600 via-cyan-600 to-indigo-600 hover:from-blue-700 hover:via-cyan-700 hover:to-indigo-700 text-white px-10 py-6 text-lg rounded-full shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 border border-cyan-500/20"
+        >
+          Descubra sua jornada
+        </Button>
         
         {/* Scroll indicator */}
-
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="h-6 w-6 text-slate-400" />
+        </div>
       </div>
 
       <style>{`

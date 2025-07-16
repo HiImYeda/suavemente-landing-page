@@ -10,7 +10,7 @@ const FounderSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-light text-slate-100 mb-8">
+          <h2 className="text-5xl font-bold text-slate-100 mb-8">
             Uma Jornada de Propósito
           </h2>
         </div>
